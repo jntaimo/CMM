@@ -43,9 +43,17 @@ def write_to_csv(data, output_path):
             writer.writerow(sphere)
 
 # Example of how to use these functions
-input_file = '20240430_SEF_X_Compact.txt'
-parsed_data = parse_cmm_data(input_file)
-output_file = input_file.replace('.txt', '.csv')
-write_to_csv(parsed_data, output_file)
+# input_file = '20240430_SEF_X_Compact.txt'
+# parsed_data = parse_cmm_data(input_file)
+# output_file = input_file.replace('.txt', '.csv')
+# write_to_csv(parsed_data, output_file)
 
 # Note: The file paths in the example should be replaced with the actual paths where your data file is stored and where you want the output CSV file.
+if __name__ == "__main__":
+    #take the input argument as the filename and call the function
+    import sys
+    file_path = sys.argv[1]
+    parsed_data = parse_cmm_data(file_path)
+    output_file = file_path.replace('.txt', '.csv')
+    write_to_csv(parsed_data, output_file)
+    pass
